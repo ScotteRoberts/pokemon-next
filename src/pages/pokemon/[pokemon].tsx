@@ -17,9 +17,56 @@ const PokemonPage: NextPage<{ pokemon?: Pokemon }> = (props) => {
         height={360}
       ></Image>
       <h1 className="capitalize">{pokemon.name}</h1>
-      <pre>
-        <code>{JSON.stringify(props.pokemon, null, 2)}</code>
-      </pre>
+      <table className=" border-collapse table-auto">
+        <tbody>
+          <tr className="border-t-2 border-b-2">
+            <th scope="row" className="text-end p-2">
+              type
+            </th>
+            <td className="p-2">
+              {pokemon.types.map((type) => {
+                return (
+                  <button
+                    key={type.slot}
+                    className="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+                  >
+                    {type.type.name}
+                  </button>
+                )
+              })}
+            </td>
+          </tr>
+          <tr className="border-b-2">
+            <th scope="row" className="text-end p-2">
+              height
+            </th>
+            <td className="p-2">{pokemon.height}</td>
+          </tr>
+          <tr className="border-b-2">
+            <th scope="row" className="text-end p-2">
+              weight
+            </th>
+            <td className="p-2">{pokemon.weight}</td>
+          </tr>
+          <tr className="border-b-2">
+            <th scope="row" className="text-end p-2">
+              abilities
+            </th>
+            <td className="p-2">
+              {pokemon.abilities.map((ability) => {
+                return (
+                  <button
+                    key={ability.slot}
+                    className="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
+                  >
+                    {ability.ability.name}
+                  </button>
+                )
+              })}
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </>
   )
 }
