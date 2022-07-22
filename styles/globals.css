@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: 'pokemonclass';
-  src: url('../assets/fonts/pokemonclass.ttf');
+  src: url('/public/fonts/pokemonclass.ttf');
 }
 
 :root {
