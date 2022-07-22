@@ -1,7 +1,7 @@
 import { GetServerSideProps, NextPage } from 'next'
-import { PokemonClient, Pokemon } from 'pokenode-ts'
 import ErrorPage from 'next/error'
 import Image from 'next/image'
+import { Pokemon, PokemonClient } from 'pokenode-ts'
 
 const PokemonPage: NextPage<{ pokemon?: Pokemon }> = (props) => {
   const { pokemon } = props

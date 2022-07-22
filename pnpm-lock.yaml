@@ -9,6 +9,7 @@ specifiers:
   eslint-config-next: 12.2.2
   eslint-config-prettier: ^8.5.0
   eslint-plugin-prettier: ^4.2.1
+  husky: ^8.0.1
   next: 12.2.2
   pokenode-ts: ^1.16.0
   postcss: ^8.4.14
@@ -33,6 +34,7 @@ devDependencies:
   eslint-config-next: 12.2.2_he2ccbldppg44uulnyq4rwocfa
   eslint-config-prettier: 8.5.0_eslint@8.20.0
   eslint-plugin-prettier: 4.2.1_g4fztgbwjyq2fvmcscny2sj6fy
+  husky: 8.0.1
   postcss: 8.4.14
   prettier: 2.7.1
   tailwindcss: 3.1.6
@@ -1386,6 +1388,12 @@ packages:
       glob: 8.0.3
       readable-stream: 3.6.0
     dev: false
+
+  /husky/8.0.1:
+    resolution: {integrity: sha512-xs7/chUH/CKdOCs7Zy0Aev9e/dKOMZf3K1Az1nar3tzlv0jfqnYtu235bstsWTmXOR0EfINrPa97yy4Lz6RiKw==}
+    engines: {node: '>=14'}
+    hasBin: true
+    dev: true
 
   /ignore/5.2.0:
     resolution: {integrity: sha512-CmxgYGiEPCLhfLnpPp1MoRmifwEIOgjcHXxOBjv7mY96c+eWScsOP9c112ZyLdWHi0FxHjI+4uVhKYp/gcdRmQ==}
