@@ -4,7 +4,7 @@ const nextConfig = {
     domains: ['raw.githubusercontent.com']
   },
   reactStrictMode: true,
-  swcMinify: true,
+  swcMinify: true
 }
 
 module.exports = nextConfig

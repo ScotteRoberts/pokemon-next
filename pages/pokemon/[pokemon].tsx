@@ -73,15 +73,15 @@ const PokemonPage: NextPage<{ pokemon?: Pokemon }> = (props) => {
 
 export const getServerSideProps: GetServerSideProps = async ({
   params,
-  res,
+  res
 }) => {
   try {
     const api = new PokemonClient()
     const pokemon = await api.getPokemonByName(params?.pokemon! as string)
     return {
       props: {
-        pokemon,
-      },
+        pokemon
+      }
     }
   } catch {
     res.statusCode = 404
