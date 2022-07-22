@@ -2,15 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
-  font-family: 'pokemonclass';
-  src: url('/public/fonts/pokemonclass.ttf');
-}
-
-:root {
-  font-family: pokemonclass;
-}
-
-html {
-  scroll-behavior: smooth;
+@layer base {
+  @font-face {
+    font-family: 'pokemon-gb';
+    src: url('../public/fonts/pokemon-gb.ttf');
+  }
+  @font-face {
+    font-family: 'pokemon';
+    src: url('../public/fonts/pokemon.ttf');
+  }
 }

@@ -5,7 +5,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}'
   ],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ['pokemon-gb', 'ui-sans-serif', 'system-ui']
+      }
+    }
   },
   plugins: []
 }
