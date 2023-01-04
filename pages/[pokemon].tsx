@@ -2,20 +2,21 @@ import { GetServerSideProps, NextPage } from 'next'
 import ErrorPage from 'next/error'
 import Image from 'next/image'
 import { Pokemon, PokemonClient } from 'pokenode-ts'
+import missingNo from '../public/images/missing-no.webp'
 
-const PokemonPage: NextPage<{ pokemon?: Pokemon }> = (props) => {
-  const { pokemon } = props
+const PokemonPage: NextPage<{ pokemon: Pokemon }> = ({ pokemon }) => {
   if (!pokemon) return <ErrorPage statusCode={404} />
+
+  let src =
+    pokemon.sprites.other?.['official-artwork'].front_default ||
+    pokemon.sprites.front_default ||
+    missingNo
+  let alt = `${pokemon.name} artwork`
   return (
     <>
       {/* TODO: Figure out fallback image for this */}
 
-      <Image
-        alt={`${pokemon.name} official artwork`}
-        src={pokemon.sprites.other?.['official-artwork'].front_default!}
-        width={360}
-        height={360}
-      ></Image>
+      <Image alt={alt} src={src} width={360} height={360}></Image>
       <h1 className="capitalize">{pokemon.name}</h1>
       <table className=" border-collapse table-auto">
         <tbody>
