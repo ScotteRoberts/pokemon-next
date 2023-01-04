@@ -12,7 +12,7 @@ const PokemonPage: NextPage<{ pokemon?: Pokemon }> = (props) => {
 
       <Image
         alt={`${pokemon.name} official artwork`}
-        src={pokemon.sprites.other['official-artwork'].front_default!}
+        src={pokemon.sprites.other?.['official-artwork'].front_default!}
         width={360}
         height={360}
       ></Image>
@@ -76,7 +76,9 @@ export const getServerSideProps: GetServerSideProps = async ({
   res
 }) => {
   try {
-    const api = new PokemonClient()
+    const api = new PokemonClient({
+      cacheOptions: { maxAge: 360000, exclude: { query: false } }
+    })
     const pokemon = await api.getPokemonByName(params?.pokemon! as string)
     return {
       props: {
