@@ -52,10 +52,12 @@ const Home: NextPage<{ pokemons: NamedAPIResourceList }> = (props) => {
             return true
           })
           .map((pokemonItem) => (
-            <Link key={pokemonItem.url} href={pokemonItem.name}>
-              <a className="rounded overflow-hidden shadow-lg capitalize text-center py-4">
-                {pokemonItem.name}
-              </a>
+            <Link
+              key={pokemonItem.url}
+              href={pokemonItem.name}
+              className="rounded overflow-hidden shadow-lg capitalize text-center py-4"
+            >
+              {pokemonItem.name}
             </Link>
           ))}
       </div>
