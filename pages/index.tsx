@@ -17,7 +17,7 @@ const Home: NextPage<{ pokemons: NamedAPIResourceList }> = (props) => {
   }
   return (
     <div className="p-4">
-      <h1 className="text-center m-2">Welcome to Pokemon</h1>
+      <h1 className="text-center m-2 dark:text-white">Welcome to Pokemon</h1>
       <div className="relative w-full">
         <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
           <svg
@@ -55,7 +55,7 @@ const Home: NextPage<{ pokemons: NamedAPIResourceList }> = (props) => {
             <Link
               key={pokemonItem.url}
               href={pokemonItem.name}
-              className="rounded overflow-hidden shadow-lg capitalize text-center py-4"
+              className="rounded overflow-hidden shadow-md capitalize text-center py-4 bg-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-rose-400"
             >
               {pokemonItem.name}
             </Link>

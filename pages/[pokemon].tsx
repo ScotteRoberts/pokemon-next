@@ -17,51 +17,56 @@ const PokemonPage: NextPage<{ pokemon: Pokemon }> = ({ pokemon }) => {
       {/* TODO: Figure out fallback image for this */}
 
       <Image alt={alt} src={src} width={360} height={360}></Image>
-      <h1 className="capitalize">{pokemon.name}</h1>
+      <h1 className="capitalize dark:text-white">{pokemon.name}</h1>
       <table className=" border-collapse table-auto">
         <tbody>
           <tr className="border-t-2 border-b-2">
-            <th scope="row" className="text-end p-2">
+            <th scope="row" className="text-end p-2 dark:text-white">
               type
             </th>
             <td className="p-2">
               {pokemon.types.map((type) => {
                 return (
-                  <button
+                  <span
                     key={type.slot}
                     className="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
                   >
                     {type.type.name}
-                  </button>
+                  </span>
                 )
               })}
             </td>
           </tr>
           <tr className="border-b-2">
-            <th scope="row" className="text-end p-2">
+            <th scope="row" className="text-end p-2 dark:text-white">
               height
             </th>
-            <td className="p-2">{pokemon.height}</td>
+            <td className="p-2 dark:text-white">
+              {(pokemon.height / 3.048).toPrecision(2)} ft
+            </td>
           </tr>
           <tr className="border-b-2">
-            <th scope="row" className="text-end p-2">
+            <th scope="row" className="text-end p-2 dark:text-white">
               weight
             </th>
-            <td className="p-2">{pokemon.weight}</td>
+            <td className="p-2 dark:text-white">
+              {/* Weight is originally in hectograms */}
+              {Math.round(pokemon.weight / 4.536)} lbs
+            </td>
           </tr>
           <tr className="border-b-2">
-            <th scope="row" className="text-end p-2">
+            <th scope="row" className="text-end p-2 dark:text-white">
               abilities
             </th>
             <td className="p-2">
               {pokemon.abilities.map((ability) => {
                 return (
-                  <button
+                  <span
                     key={ability.slot}
                     className="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
                   >
                     {ability.ability.name}
-                  </button>
+                  </span>
                 )
               })}
             </td>
